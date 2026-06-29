@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+
+  --color-primary: #9c3d00;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #c34f04;
+  --color-on-primary-container: #fff9f8;
+  --color-primary-fixed: #ffdbcc;
+  --color-primary-fixed-dim: #ffb695;
+  --color-on-primary-fixed: #351000;
+  --color-on-primary-fixed-variant: #7b2f00;
+
+  --color-secondary: #515e7b;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d0ddff;
+  --color-on-secondary-container: #54617d;
+  --color-secondary-fixed: #d8e2ff;
+  --color-secondary-fixed-dim: #b9c6e7;
+  --color-on-secondary-fixed: #0d1b34;
+  --color-on-secondary-fixed-variant: #3a4762;
+
+  --color-tertiary: #6c5748;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #866f5f;
+  --color-on-tertiary-container: #fffaf8;
+  --color-tertiary-fixed: #faddc9;
+  --color-tertiary-fixed-dim: #ddc1ae;
+  --color-on-tertiary-fixed: #27180d;
+  --color-on-tertiary-fixed-variant: #564335;
+
+  --color-background: #fbf9f8;
+  --color-on-background: #1b1c1c;
+
+  --color-surface: #fbf9f8;
+  --color-on-surface: #1b1c1c;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-variant: #e4e2e1;
+  --color-on-surface-variant: #584238;
+
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae8e7;
+  --color-surface-container-highest: #e4e2e1;
+
+  --color-inverse-surface: #303030;
+  --color-inverse-on-surface: #f3f0f0;
+  --color-inverse-primary: #ffb695;
+
+  --color-outline: #8c7166;
+  --color-outline-variant: #dfc0b3;
+  --color-surface-tint: #a23f00;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+  }
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 40px 60px rgba(195, 79, 4, 0.06);
+}
+
+.dark-glass-panel {
+  background: rgba(13, 27, 52, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+}
+
+.luxury-shadow {
+  box-shadow: 0 40px 60px rgba(195, 79, 4, 0.06);
+}
+
+.curved-bottom {
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+@keyframes float-blob-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -60px) scale(1.15); }
+  100% { transform: translate(-30px, 30px) scale(0.9); }
+}
+
+@keyframes float-blob-2 {
+  0% { transform: translate(0, 0) scale(0.95); }
+  50% { transform: translate(-50px, 40px) scale(1.05); }
+  100% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+@keyframes float-blob-3 {
+  0% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(30px, 50px) scale(0.9); }
+  100% { transform: translate(-40px, -40px) scale(1.05); }
+}
+
+.animate-blob-1 {
+  animation: float-blob-1 18s infinite alternate ease-in-out;
+}
+
+.animate-blob-2 {
+  animation: float-blob-2 22s infinite alternate ease-in-out;
+}
+
+.animate-blob-3 {
+  animation: float-blob-3 25s infinite alternate ease-in-out;
+}
+
+/* Custom scrollbar to keep layout premium */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}

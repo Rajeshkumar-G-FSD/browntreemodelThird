@@ -1,0 +1,6 @@
+{
+  "name": "Brown Tree",
+  "description": "A luxury hospitality experience combining organic warmth, curated stay experiences, and refined architectural precision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
